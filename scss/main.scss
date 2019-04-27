@@ -223,11 +223,12 @@ body {
     width: 120px;
     height: 40px;
     margin-left: auto;
+    margin-right: 10px;
     border: 2px solid darken(#f3f3f3, 10);
     border-radius: 5px;
     font-weight: 600;
     transition: 0.3s;
-
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -329,11 +330,11 @@ body {
 }
 
 //button_add
-.container__edit img{
+.container__edit img, .container__edit_training img{
     width: 60px;
     height: 60px;
     margin-top: 37%;
-    margin-left: 94%;
+    margin-left: 79%;
     position: fixed;
     z-index: 2;
     display: none;
@@ -539,4 +540,10 @@ body {
 
 .container__add-edit, .container__add-edit_training {
 
+}
+
+.container_add_modal_form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

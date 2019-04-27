@@ -28,7 +28,7 @@ const cartPersonalInformation = () => {
 //formularz uzupełnienia danych:
 const registrationFormFunction = () => {
     
-    const addButton = document.querySelector('.content__button');
+    const addButton = document.querySelector('.content__button'); 
     const information = document.querySelector('.modal__information');
     const container = document.querySelector(".modal");
 
