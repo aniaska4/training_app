@@ -5,23 +5,25 @@ $desktop: "(min-width: 992px) and (max-width: 1201px)";
 $tablet: "(min-width: 768px) and (max-width: 991px)";
 $smartphone: "(min-width: 577px) and (max-width: 767px)";
 $phone: "(min-width: 321px) and (max-width: 576px)";
-$smallphone: "(max-width: 320px)"; 
+$smallphone: "(max-width: 320px)";
 
 
 /*-------------------------ZMIENNE-----------------------*/
 $fontColor: rgba(59, 58, 58, 0.842);
-$fontSizeTitle: 30px;
+$fontSizeTitle: 1.7em;
 $fontSizeTitleMedia: 35px;
 $bgcColor: rgb(61, 58, 58);
+$bodyColor: rgb(172, 158, 148);
+$fontTextInput: #2c2a2a;
 
 
-*{
+* {
     margin: 0;
 
 }
 
 body {
-    background-color: rgb(172, 158, 148);
+    background-color: $bodyColor;
 }
 
 .container {
@@ -53,6 +55,10 @@ body {
         position: fixed;
         background-color: rgba(223, 215, 215, 0.774);
         width: 100%;
+        height: 9%;
+        @media #{$desktop} {
+            height: 6%;
+        }
 
         ul {
             list-style-type: none;
@@ -74,6 +80,10 @@ body {
                 border-bottom: 2px solid rgba(234, 224, 224, 0.774);
                 transition: border-bottom 0.3s linear;
                 cursor: pointer;
+                font-size: 1.3em;
+                @media #{$phone, $smallphone} {
+                    font-size: 1em;
+                }
 
                 &:hover {
                     border-bottom: 2px solid red;
@@ -119,7 +129,8 @@ body {
 }
 
 // information about empty input value
-.modal__information, .modal__information_training {
+.modal__information,
+.modal__information_training {
     font-weight: bold;
     font-family: "Quicksand";
     color: red;
@@ -127,7 +138,8 @@ body {
 }
 
 // close button
-.content__close, .close_training {
+.content__close,
+.close_training {
     margin-left: 35px;
     color: #d0c7c7;
     font-size: 92px;
@@ -141,7 +153,10 @@ body {
     }
 }
 
-
+.body__content,
+.body__content_training {
+    display: none;
+}
 
 
 //button add details
@@ -162,11 +177,11 @@ body {
     height: 40px;
     margin-left: auto;
     margin-right: 10px;
-    border: 2px solid darken(#f3f3f3, 10);
+    border: 2px solid red;
     border-radius: 5px;
     font-weight: 600;
     transition: 0.3s;
-    color: white;
+    color: #2c2a2a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,49 +195,14 @@ body {
     }
 }
 
-//button_add and edith
-.container__edit img, .container__edit_training img{
-    width: 60px;
-    height: 60px;
-    margin-top: 37%;
-    margin-left: 79%;
-    position: fixed;
-    z-index: 2;
-    display: none;
-    @media #{$phone, $smallphone} {
-        margin-top: 152%;       
-    }
-}
-
-.container__add, .container__add_training {
-    width: 60px;
-    height: 60px;
-    margin-top: 37%;
-    margin-left: 94%;
-    position: fixed;
-    z-index: 2;
-    @media #{$phone, $smallphone} {
-       
-    }
-
-    img {
-        width: 60px;
-        height: 60px;
-        left: -140px;
-        position: absolute;
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
-}
 //^^^^^^^^^^^^^^^^^section registrationForm  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
 
 .container__add-modal-training {
-    display:none;
+    display: none;
 }
 
-.modal, .modal_training {
+.modal,
+.modal_training {
     width: 100%;
     height: 100%;
     top: 0;
@@ -234,13 +214,15 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     overflow-y: scroll;
     display: none;
-    
+
 
     .modal__content {
         width: 50%;
         height: 100%;
         border: 1px solid red;
-        @media #{$phone, $smallphone} {
+        background-color: $bodyColor;
+
+        @media #{$phone, $smallphone, $smartphone, $tablet, $desktop} {
             width: 90%;
         }
     }
@@ -261,6 +243,7 @@ body {
     h3 {
         text-align: center;
         width: 100%;
+        color: $fontTextInput;
     }
 }
 
@@ -273,7 +256,7 @@ body {
     width: 100%;
     margin-top: 40px;
     font-size: 18px;
-    color: silver;
+    color: $fontTextInput;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -283,6 +266,7 @@ body {
         width: 60%;
         margin-left: 10px;
         background-color: #FEFEFE;
+
         @media #{$phone, $smallphone} {
             width: 90%;
             margin-left: 0;
@@ -301,7 +285,8 @@ body {
     }
 }
 
-.app_body_main_container, .app_body_training_container {
+.app_body_main_container,
+.app_body_training_container {
     padding-top: 100px;
 }
 
@@ -309,6 +294,8 @@ body {
 
 .body__person_details {
     width: 70%;
+
+
     @media #{$phone, $smallphone} {
         width: 100%;
     }
@@ -321,25 +308,59 @@ body {
         transition: border-bottom 0.3s linear;
         border-bottom: 2px solid yellowgreen;
         margin-left: 10px;
+
         &:hover {
             border-bottom: 2px solid red;
         }
+
         @media #{$phone, $smallphone} {
             font-size: 23px;
             border-bottom: 2px solid rgb(139, 73, 29);
             padding-bottom: 20px;
         }
+
     }
+
+    .button_container {
+        display: flex;
+
+        .container__add,
+        .container__add_training,
+        .container__edit,
+        .container__edit_training {
+            font-size: 2em;
+            width: 1em;
+            padding: 15px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .fas {
+                width: 40px;
+                height: 40px;
+                color: $fontTextInput;
+            }
+        }
+
+        .container__edit .fas,
+        .container__edit_training .fas {
+            display: none;
+        }
+
+    }
+
+
 
     .body_person {
         display: flex;
         justify-content: space-around;
         align-items: center;
         height: 100px;
+
         @media #{$phone, $smallphone} {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            height: 60px;
         }
     }
 
@@ -350,8 +371,10 @@ body {
         font-weight: 600;
         width: 45%;
         height: 45%;
-        text-align: center;
+        text-align: left;
+        margin-left: 5px;
         padding-top: 10px;
+
         @media #{$phone, $smallphone} {
             font-size: 20px;
         }
@@ -359,16 +382,16 @@ body {
 
     .text {
         font-size: 20px;
-        color: $fontColor;
+        color: $fontTextInput;
         text-transform: uppercase;
         font-weight: 600;
         width: 55%;
         height: 40%;
-        border: 1px solid red;
         border-radius: 5px;
         background-color: rgb(172, 158, 148);
         text-align: center;
         padding-top: 12px;
+
         @media #{$phone, $smallphone} {
             width: 75%;
             height: 18%;
@@ -381,21 +404,27 @@ body {
 #map {
     width: 300px;
     height: 300px;
+
+    @media #{$phone, $smallphone} {
+        width: 250px;
+        height: 250px;
+    }
 }
 
-#submit{
+#submit {
     width: 30%;
     height: 40px;
     margin-bottom: 15px;
-    background-color:$bgcColor;
-    color: white;    
+    background-color: $bgcColor;
+    color: white;
     margin-top: 30px;
+
     @media #{$phone, $smallphone} {
         width: 50%;
     }
 }
 
-.app_body_training_container{
+.app_body_training_container {
     display: none;
 }
 

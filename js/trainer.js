@@ -12,11 +12,12 @@ const newCartTraining = () => {
 // ukazanie karty z treningiem
 const showModalTraining = () => {
 
-    const addModalButton = document.querySelector(".container__add_training")
+    const addModalButton = document.querySelector(".app_body_training_container")
 
     addModalButton.addEventListener("click", function () {
         const containerModal = document.querySelector(".modal_training");
         containerModal.style.display = "block";
+        document.querySelector(".body__content").style.display = "block";
     })
 }
 
@@ -28,6 +29,7 @@ const hideModalTreining = () => {
     closeBtn.addEventListener("click", function () {
         const containerModal = document.querySelector(".modal_training");
         containerModal.style.display = "none";
+        document.querySelector(".body__content").style.display = "block";
     })
 }
 
@@ -85,7 +87,16 @@ const registrationFormFunctionTraining = () => {
     })
 
 }
+
+const showBodyContent = () => {
+    const buttonAdd = document.querySelector(".container__add_training");
+    buttonAdd.addEventListener("click", function () {
+        const bodyContentTraining = document.querySelector(".body__content_training");
+        bodyContentTraining.style.display = "block";
+    })
+}
 showModalTraining();
 hideModalTreining();
 newCartTraining();
 registrationFormFunctionTraining();
+showBodyContent();

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
     <title>Training app</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,8 +18,7 @@
                 <nav class="main_nav ">
                     <div class="container">
                         <ul>
-                            <li id="personalInformation" class="scroll"><a href="trenings.html"></a></a>dane osobowe
-                            </li>
+                            <li id="personalInformation" class="scroll"></a></a>dane osobowe</li>
                             <li id="personalTraining" class="scroll">moje treningi</li>
                         </ul>
                     </div>
@@ -29,14 +30,6 @@
 
         <!-- ^^^^^^^^^^^^^^^^sekcja Ia dodaj dane ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
         <section class="main_container_add">
-            <div class="container__add">
-                <img src="images/add_button.svg" alt="add">
-            </div>
-            <div class="container__edit">
-                <img src="images/edit.svg" alt="add">
-            </div>
-
-
             <div class="container__add-modal modal">
                 <div class="container_add_modal_form">
                     <div class="modal__content">
@@ -48,7 +41,6 @@
                             <div class="content__title">
                                 <h3>Your profile</h3>
                             </div>
-
                             <div class="form__directions form-textarea nameForm">
                                 <div class="form__title form-row" id="name">
                                     <div class="title__title label">
@@ -97,20 +89,26 @@
                 </div>
             </div>
         </section>
-
-
-
         <!-- ^^^^^^^^^^^^sekcja Ib: przekaż dane do formularza^^^^^^^^^^^^^^^^^^^^^^^^^-->
         <section class="app_body_main_container">
             <div class="app__body">
                 <div class="body__person_details">
-                    <div class="body__person_details_title">
-                        dane osobowe:
+                        <div class="body__person_details_title">
+                                dane osobowe:
+                        </div>
+                    <div class="button_container">                        
+                        <div class="container__add">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="container__edit">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
                     </div>
+
                     <div class="body__content">
                         <div class="content">
                             <div class="content__img"></div>
-                            <div class="content__text">
+                            <div class="content__text main_text_container">
                                 <div class="body__person_name body_person">
                                     <div class="body__person_name_title title">
                                         Name:
@@ -138,10 +136,10 @@
                                 </div>
 
                             </div>
+                            <div class="content__icons"></div>
+                            <input id="submit" type="button" value="Pokaż adres na mapie">
+                            <div id="map"></div>
                         </div>
-                        <div class="content__icons"></div>
-                        <input id="submit" type="button" value="Pokaż adres na mapie">
-                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -152,12 +150,6 @@
         <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^sekcja IIa dodaj dane ^^^^^^^^^^^^^^^^^^^^^^^^^-->
 
         <section class="training_contener_add_training">
-            <div class="container__add_training">
-                <img src="images/add_button.svg" alt="add">
-            </div>
-            <div class="container__edit_training">
-                <img src="images/edit.svg" alt="add">
-            </div>
             <div class="container__add-modal-training modal_training">
                 <div class="container_add_modal_form">
                     <div class="modal__content">
@@ -165,7 +157,7 @@
                             &times;
                         </span>
                         <div class="content__title form-row">
-                            Your trenings
+                            Twój trening
                         </div>
                         <form class="content__form form">
 
@@ -181,20 +173,18 @@
                             <div class=" form-textarea surnameForm">
                                 <div class="form-row" id="surname">
                                     <div class="label title__title">
-                                        Category
+                                        Dyscyplina
                                     </div>
-                                    <input class="input categoryValue" id="formSurname"
-                                        placeholder="">
+                                    <input class="input categoryValue" id="formSurname" placeholder="">
                                 </div>
                             </div>
 
                             <div class=" form-textarea emailForm">
                                 <div class="form-row">
                                     <div class="label title__title" id="email">
-                                        Description
+                                        Opis treningu
                                     </div>
-                                    <input class="input descriptionValue" id="formEmail"
-                                        placeholder="">
+                                    <input class="input descriptionValue" id="formEmail" placeholder="">
                                 </div>
                             </div>
                         </form>
@@ -217,12 +207,20 @@
             <div class="app__body">
                 <div class="body__person_details">
                     <div class="body__person_details_title">
-                        <h3>Your training: </h3>
+                        <h3>Twój trening: </h3>
                     </div>
-                    <div class="body__content">
+                    <div class="button_container">                        
+                            <div class="container__add container__add_training ">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="container__edit_training">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                        </div>
+                    <div class="body__content_training">
                         <div class="content">
                             <div class="content__img"></div>
-                            <div class="content__text">
+                            <div class="content__text main_text_container">
                                 <div class="body__person_name body_person">
                                     <div class="body__person_name_title title">
                                         data:
@@ -231,7 +229,7 @@
                                 </div>
                                 <div class="body__person_surname body_person">
                                     <div class="body__person_surname_title title">
-                                        Kategoria:
+                                        Dyscyplina:
                                     </div>
                                     <div class="categoryText text"></div>
                                 </div>

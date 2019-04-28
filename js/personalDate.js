@@ -1,15 +1,17 @@
 
-// ukrywanie modułu danych personalnych:
+// ukrywanie i pokazywanie modułu danych personalnych:
 const modals = () => {
     const showAddModal = () => {
         document.querySelector('.container__add-modal').style.display = 'block';
+        document.querySelector(".body__content").style.display = "block";
+console.log("ania")
     }
 
     const hideAddModal = () => {
         document.querySelector('.container__add-modal').style.display = 'none';
     }
 
-    document.querySelector('.container__add').addEventListener('click', showAddModal);
+    document.querySelector('.container__add .fas').addEventListener('click', showAddModal);
     document.querySelector('.close').addEventListener('click', hideAddModal);
 }
 
@@ -73,6 +75,15 @@ const registrationFormFunction = () => {
     
 }
 
+const hideAddPersonButtonTraining = () => {
+    const buttonAdd = document.querySelector(".content__button_training");
+    buttonAdd.addEventListener("click", function () {
+        const addPersonButton = document.querySelector(".container__add");
+        addPersonButton.style.display = "none;"
+    })
+}
+
 registrationFormFunction();
 cartPersonalInformation();
 modals();
+hideAddPersonButtonTraining();
