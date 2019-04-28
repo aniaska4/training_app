@@ -1,20 +1,6 @@
-/*----------------RWD------------*/
-$max: "(min-width: 1600px)";
-$big: "(min-width: 1202px) and (max-width: 1599px)";
-$desktop: "(min-width: 992px) and (max-width: 1201px)";
-$tablet: "(min-width: 768px) and (max-width: 991px)";
-$smartphone: "(min-width: 577px) and (max-width: 767px)";
-$phone: "(min-width: 321px) and (max-width: 576px)";
-$smallphone: "(max-width: 320px)";
-
-
-/*-------------------------ZMIENNE-----------------------*/
-$fontColor: rgba(59, 58, 58, 0.842);
-$fontSizeTitle: 1.7em;
-$fontSizeTitleMedia: 35px;
-$bgcColor: rgb(61, 58, 58);
-$bodyColor: rgb(172, 158, 148);
-$fontTextInput: #2c2a2a;
+@import "vars.scss";
+@import "nav.scss";
+@import "buttons.scss";
 
 
 * {
@@ -48,85 +34,6 @@ body {
     display: none;
 }
 
-//^^^^^^^^^^^^^^^^^header^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
-
-.nav {
-    .main_nav {
-        position: fixed;
-        background-color: rgba(223, 215, 215, 0.774);
-        width: 100%;
-        height: 9%;
-        @media #{$desktop} {
-            height: 6%;
-        }
-
-        ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            color: $fontColor;
-            font-weight: 600;
-
-            @media #{$phone, $smallphone} {
-                display: flex;
-                justify-content: center;
-                flex-direction: row;
-                padding: 5px;
-            }
-
-            li {
-                margin: 10px;
-                text-transform: uppercase;
-                border-bottom: 2px solid rgba(234, 224, 224, 0.774);
-                transition: border-bottom 0.3s linear;
-                cursor: pointer;
-                font-size: 1.3em;
-                @media #{$phone, $smallphone} {
-                    font-size: 1em;
-                }
-
-                &:hover {
-                    border-bottom: 2px solid red;
-                }
-            }
-        }
-    }
-
-    .name {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-
-        h2 {
-            font-size: 5em;
-
-            @media #{$phone, $smallphone} {
-                font-size: 2em;
-            }
-        }
-
-        h3 {
-            font-size: 2em;
-            color: red;
-
-            @media #{$phone, $smallphone} {
-                font-size: 2em;
-            }
-        }
-    }
-
-    a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-    }
-
-    a:hover {
-        color: tomato;
-    }
-}
 
 // information about empty input value
 .modal__information,
@@ -159,44 +66,13 @@ body {
 }
 
 
-//button add details
-.content__footer {
-    width: 100%;
-    height: 40px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.content__button,
-.content__button_training {
-    width: 120px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: 10px;
-    border: 2px solid red;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: 0.3s;
-    color: #2c2a2a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-        transition: 0.3s;
-        background-color: darken(#f3f3f3, 10);
-        cursor: pointer;
-        font-weight: 700;
-        color: rgb(70, 66, 66);
-    }
-}
-
 //^^^^^^^^^^^^^^^^^section registrationForm  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^//
-
+.content__text{
+    @media #{$big, $desktop,$max} {
+        width: 40%;
+    }
+   
+}
 .container__add-modal-training {
     display: none;
 }
@@ -320,49 +196,7 @@ body {
         }
 
     }
-
-    .button_container {
-        display: flex;
-
-        .container__add,
-        .container__add_training,
-        .container__edit,
-        .container__edit_training {
-            font-size: 2em;
-            width: 1em;
-            padding: 15px;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .fas {
-                width: 40px;
-                height: 40px;
-                color: $fontTextInput;
-            }
-        }
-
-        .container__edit .fas,
-        .container__edit_training .fas {
-            display: none;
-        }
-
-    }
-
-
-
-    .body_person {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100px;
-
-        @media #{$phone, $smallphone} {
-            display: flex;
-            height: 60px;
-        }
-    }
+    
 
     .title {
         font-size: 25px;

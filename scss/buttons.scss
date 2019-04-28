@@ -1,0 +1,78 @@
+@import "vars.scss";
+
+.content__footer {
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__button,
+.content__button_training {
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 10px;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+    color: #2c2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        transition: 0.3s;
+        background-color: darken(#f3f3f3, 10);
+        cursor: pointer;
+        font-weight: 700;
+        color: rgb(70, 66, 66);
+    }
+}
+
+.button_container {
+    display: flex;
+
+    .container__add,
+    .container__add_training,
+    .container__edit,
+    .container__edit_training {
+        font-size: 2em;
+        width: 1em;
+        padding: 15px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .fas {
+            width: 40px;
+            height: 40px;
+            color: $fontTextInput;
+        }
+    }
+
+    .container__edit .fas,
+    .container__edit_training .fas {
+        display: none;
+    }
+
+}
+
+
+.body_person {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+
+    @media #{$phone, $smallphone} {
+        display: flex;
+        height: 60px;
+    }
+}
