@@ -13,9 +13,9 @@
 A small responsive sport-application. Using sass and js.
 
 ## Screenshots
-![Example screenshot](./images/dane_personalne.png)
-![Example screenshot](./images/dane_strona_głowna.png)
-![Example screenshot](./images/responsiv.png)
+![Example screenshot](images/dane_personalne.png)
+![Example screenshot](images/dane_strona_głowna.png)
+![Example screenshot](images/responsiv.png)
 
 ## Technologies
 * JavaScript - ECMAScript 6
